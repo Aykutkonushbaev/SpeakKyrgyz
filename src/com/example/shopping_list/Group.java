@@ -1,8 +1,5 @@
 package com.example.shopping_list;
 
-/**
- * Created by nursultan on 5/6/14.
- */
 public class Group {
 
     private long id;

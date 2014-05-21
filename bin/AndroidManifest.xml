@@ -19,5 +19,6 @@
         <activity
                 android:name=".ItemsActivity"
                 android:label="Items"/>
+        <activity android:name="ThirdActivity"></activity>
     </application>
 </manifest>

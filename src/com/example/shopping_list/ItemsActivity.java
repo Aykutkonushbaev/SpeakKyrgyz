@@ -3,6 +3,7 @@ package com.example.shopping_list;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.*;
 
 import java.util.List;
@@ -30,6 +31,20 @@ public class ItemsActivity extends Activity {
 
         final ArrayAdapter<ItemsModel> adapter = new ArrayAdapter<ItemsModel>(this, android.R.layout.simple_list_item_1, itemsModels);
         listViewItems.setAdapter(adapter);
+        
+        listViewItems.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+
+                Intent intent = new Intent(getApplicationContext(), ThirdActivity.class);
+                ItemsModel group = (ItemsModel) adapterView.getItemAtPosition(position);
+                intent.putExtra(DatabaseHelper.COLUMN_TRANSLATION, group.getTranslation());
+                intent.putExtra(DatabaseHelper.COLUMN_TRANSCRIPT, group.getTranscript());
+                intent.putExtra(DatabaseHelper.COLUMN_AUDIO, group.getAudio());
+                intent.setAction(intent.ACTION_VIEW);
+                startActivity(intent);
+            }
+        });
 
     }
 
