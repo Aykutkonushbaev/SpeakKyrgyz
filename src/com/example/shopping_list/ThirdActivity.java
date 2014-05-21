@@ -51,11 +51,7 @@ public class ThirdActivity extends Activity implements OnClickListener, OnLoadCo
 	
 	@Override
 	public void onClick(View v) {
-	    switch (v.getId()) {
-	    case R.id.button1:
-	    	sp.play(soundID, 1, 0, 0, 9, 1);
-	      break;
-	      }
+	    	sp.play(soundID, 1, 1, 0, 0, 1);
 	 }
 
 	@Override

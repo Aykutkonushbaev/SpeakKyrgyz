@@ -1075,7 +1075,12 @@ containing a value of this type.
         public static final int abc_textfield_searchview_holo_light=0x7f020054;
         public static final int abc_textfield_searchview_right_holo_dark=0x7f020055;
         public static final int abc_textfield_searchview_right_holo_light=0x7f020056;
-        public static final int ic_launcher=0x7f020057;
+        public static final int bg1=0x7f020057;
+        public static final int bg2=0x7f020058;
+        public static final int bg3=0x7f020059;
+        public static final int ic_launcher=0x7f02005a;
+        public static final int play_button=0x7f02005b;
+        public static final int play_button1=0x7f02005c;
     }
     public static final class id {
         public static final int about=0x7f060058;
@@ -1231,6 +1236,7 @@ containing a value of this type.
     }
     public static final class raw {
         public static final int audio1=0x7f050000;
+        public static final int salam=0x7f050001;
     }
     public static final class string {
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 
