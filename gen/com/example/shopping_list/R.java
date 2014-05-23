@@ -1075,12 +1075,18 @@ containing a value of this type.
         public static final int abc_textfield_searchview_holo_light=0x7f020054;
         public static final int abc_textfield_searchview_right_holo_dark=0x7f020055;
         public static final int abc_textfield_searchview_right_holo_light=0x7f020056;
-        public static final int bg1=0x7f020057;
-        public static final int bg2=0x7f020058;
-        public static final int bg3=0x7f020059;
-        public static final int ic_launcher=0x7f02005a;
-        public static final int play_button=0x7f02005b;
-        public static final int play_button1=0x7f02005c;
+        public static final int adsf=0x7f020057;
+        public static final int asdfas=0x7f020058;
+        public static final int asdfd=0x7f020059;
+        public static final int asdfw=0x7f02005a;
+        public static final int aswdf=0x7f02005b;
+        public static final int bg=0x7f02005c;
+        public static final int bg1=0x7f02005d;
+        public static final int ic_launcher=0x7f02005e;
+        public static final int play_button=0x7f02005f;
+        public static final int play_button1=0x7f020060;
+        public static final int wef=0x7f020061;
+        public static final int wqer=0x7f020062;
     }
     public static final class id {
         public static final int about=0x7f060058;

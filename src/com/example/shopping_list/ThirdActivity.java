@@ -1,11 +1,16 @@
 package com.example.shopping_list;
 
+import java.io.IOException;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.media.SoundPool;
 import android.media.SoundPool.OnLoadCompleteListener;
+import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -21,7 +26,8 @@ public class ThirdActivity extends Activity implements OnClickListener, OnLoadCo
 	final int MAX_STREAMS = 5;
 	int streamID;
 	int soundID;
-	SoundPool sp;
+	//SoundPool sp;
+	private static final String TAG = "myLogs";
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -40,22 +46,32 @@ public class ThirdActivity extends Activity implements OnClickListener, OnLoadCo
         tv1.setText(intent.getStringExtra(DatabaseHelper.COLUMN_TRANSLATION));
         tv2.setText(intent.getStringExtra(DatabaseHelper.COLUMN_TRANSCRIPT));
         audio = intent.getStringExtra(DatabaseHelper.COLUMN_AUDIO);
+//        Uri myUri = ....;
         
-        sp = new SoundPool(MAX_STREAMS, AudioManager.STREAM_MUSIC, 0);
-        sp.setOnLoadCompleteListener(this);
+//        sp = new SoundPool(MAX_STREAMS, AudioManager.STREAM_MUSIC, 0);
+//        sp.setOnLoadCompleteListener(this);
         
-        soundID = sp.load(this, R.raw.audio1, 1);
+//        soundID = sp.load(this, R.raw.audio1, 1);
         
         btn.setOnClickListener(this);
+        
 	}
 	
 	@Override
 	public void onClick(View v) {
-	    	sp.play(soundID, 1, 1, 0, 0, 1);
+		MediaPlayer mediaPlayer = new MediaPlayer();
+		mediaPlayer = MediaPlayer.create(getApplicationContext(), getResources().getIdentifier("" + audio, "raw", "com.example.shopping_list"));
+            mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mediaPlayer) {
+                    mediaPlayer.release();
+                }
+            });
+            mediaPlayer.start();
 	 }
 
 	@Override
-	public void onLoadComplete(SoundPool soundPool, int sampleId, int status) {
+	public void onLoadComplete(SoundPool arg0, int arg1, int arg2) {
 		// TODO Auto-generated method stub
 		
 	}
